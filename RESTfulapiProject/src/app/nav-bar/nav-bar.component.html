@@ -1,0 +1,20 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar navbar-dark green">
+    <logo><a class="navbar-brand" href="#">Web frameworks</a></logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>test</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>test2</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                        <a [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Search</a>
+                    </li>
+            </ul>
+        </links>
+</mdb-navbar>
