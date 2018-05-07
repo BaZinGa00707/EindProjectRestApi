@@ -5,12 +5,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MainActivityComponent } from './main-activity/main-activity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
+    MainActivityComponent,
   
   ],
   imports: [
@@ -18,6 +20,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},
+      { path: 'main', component: MainActivityComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
     ], { useHash: true }),
   ],
