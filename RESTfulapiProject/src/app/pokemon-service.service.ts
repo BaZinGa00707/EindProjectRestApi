@@ -9,7 +9,7 @@ import { PokemonInterface } from './pokemon-interface';
 @Injectable()
 export class PokemonServiceService {
 
-private ApiUrl = "";
+private ApiUrl = "https://api.pokemontcg.io/v1/";
 
   constructor(private http:Http) { }
     
