@@ -2,29 +2,13 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
-import { PokemonInterface } from './pokemon-interface';
 
 
 
 @Injectable()
 export class PokemonServiceService {
 
-private ApiUrl = "";
-
-  constructor(private http:Http) { }
-    
-  getPosts(): Observable<PokemonInterface[]> {
-    return this.http
-         .get(this.ApiUrl)
-         .map((Response: Response) => {
-           return <PokemonInterface[]>Response.json();
-         })
-         .catch(this.handleError);
-  }
-
-  private handleError(error : Response){
-    return Observable.throw(error.statusText);
-  }
+  constructor() { }
 
 }
 
