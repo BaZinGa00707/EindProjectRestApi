@@ -5,6 +5,7 @@ import "rxjs/Rx";
 
 
 
+
 @Injectable()
 export class PokemonServiceService {
 
