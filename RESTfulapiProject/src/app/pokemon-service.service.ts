@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -9,8 +10,11 @@ import "rxjs/Rx";
 @Injectable()
 export class PokemonServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
+  getCards(): Observable<ICards>{
+    return this.http.get<ICards>('https://api.pokemontcg.io/v1/cards?')
+  }
 }
 
 
@@ -64,6 +68,6 @@ export interface Card {
   evolvesFrom: string;
 }
 
-export interface RootObject {
+export interface ICards {
   cards: Card[];
 }

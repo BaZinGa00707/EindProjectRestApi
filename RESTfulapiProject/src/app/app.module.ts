@@ -9,6 +9,7 @@ import { MainActivityComponent } from './main-activity/main-activity.component';
 import { FormsModule} from "@angular/forms"
 import { HttpModule} from "@angular/http"
 import {HttpClientModule } from '@angular/common/http';
+import { PokemonServiceService } from './pokemon-service.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {HttpClientModule } from '@angular/common/http';
     ], { useHash: true }),
   ],
   schemas:[NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [
+    PokemonServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

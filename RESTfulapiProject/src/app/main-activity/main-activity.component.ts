@@ -15,13 +15,14 @@ export class MainActivityComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient ){}
+  constructor(private service: PokemonServiceService ){}
   
   
   
   ngOnInit(): void {
-    this.http.get('https://api.pokemontcg.io/v1/cards?').subscribe(data => {
-      console.log(data);
+    this.service.getCards()
+                .subscribe(data => {
+                 console.log(data);
     })
 }
 
