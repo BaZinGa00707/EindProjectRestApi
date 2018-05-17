@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonServiceService } from '../pokemon-service.service';
+import { PokemonServiceService, ICards } from '../pokemon-service.service';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -12,19 +12,32 @@ import { HttpClient } from '@angular/common/http';
 export class MainActivityComponent implements OnInit {
 
 
-
+PokemonData: ICards[];
 
 
   constructor(private service: PokemonServiceService ){}
   
-  
+  /*ngOnInit(): void {
+    this.service.getCards()
+                .subscribe(data => {
+                   this.PokemonData = data;
+                })
+               
+      
+      
+    }
+}*/
   
   ngOnInit(): void {
     this.service.getCards()
                 .subscribe(data => {
-                 console.log(data);
-    })
+                  console.log(data);
+                })
+               
+      
+      
+    }
 }
 
 
-}
+

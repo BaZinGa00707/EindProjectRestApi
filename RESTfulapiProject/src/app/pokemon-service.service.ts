@@ -12,8 +12,8 @@ export class PokemonServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<ICards>{
-    return this.http.get<ICards>('https://api.pokemontcg.io/v1/cards?')
+  getCards(): Observable<ICards[]>{
+    return this.http.get<ICards[]>('https://api.pokemontcg.io/v1/cards?')
   }
 }
 

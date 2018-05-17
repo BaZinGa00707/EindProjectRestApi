@@ -1,3 +1,24 @@
-<p>
-  main-activity works!
-</p>
+<div class="card" *ngIf="PokemonData">
+  <div class="card-header">Pokemon</div>
+  <div class="card-block">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Naam</th>
+                  <th>id</th>
+                  <th>hp</th>
+                  <th>pokedexnumer</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of PokemonData">
+                  <td>{{data.name}}</td>
+                  <td>{{data.id}}</td>
+                  <td>{{data.hp}}</td>
+                  <td>{{data.nationalPokedexNumber}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
