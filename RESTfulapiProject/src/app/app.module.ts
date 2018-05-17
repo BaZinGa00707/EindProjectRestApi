@@ -8,7 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainActivityComponent } from './main-activity/main-activity.component';
 import { FormsModule} from "@angular/forms"
 import { HttpModule} from "@angular/http"
-
+import {HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { HttpModule} from "@angular/http"
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},

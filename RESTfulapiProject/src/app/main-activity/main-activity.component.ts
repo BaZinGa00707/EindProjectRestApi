@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './main-activity.component.html',
   styleUrls: ['./main-activity.component.css']
 })
-export class MainActivityComponent { /*implements OnInit {
+export class MainActivityComponent implements OnInit {
 
 
 
@@ -22,8 +22,8 @@ export class MainActivityComponent { /*implements OnInit {
   ngOnInit(): void {
     this.http.get('https://api.pokemontcg.io/v1/cards?').subscribe(data => {
       console.log(data);
-    })*/
+    })
 }
 
 
-
+}
