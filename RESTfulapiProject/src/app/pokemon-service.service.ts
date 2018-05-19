@@ -3,6 +3,7 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map' ;
 
 
 
@@ -12,7 +13,7 @@ export class PokemonServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<ICards[]>{
+  get getCards(): Observable<ICards[]>{
     return this.http.get<ICards[]>('https://api.pokemontcg.io/v1/cards?')
   }
 }

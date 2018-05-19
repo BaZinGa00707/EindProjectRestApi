@@ -12,11 +12,11 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let data of PokemonData">
-                  <td>{{data.name}}</td>
-                  <td>{{data.id}}</td>
-                  <td>{{data.hp}}</td>
-                  <td>{{data.nationalPokedexNumber}}</td>
+              <tr *ngFor="let d of PokemonData">      <!-- | async -->
+                  <td>{{d.name}}</td>
+                  <td>{{d.id}}</td>
+                  <td>{{d.hp}}</td>
+                  <td>{{d.nationalPokedexNumber}}</td>
               </tr>
           </tbody>
       </table>

@@ -11,33 +11,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainActivityComponent implements OnInit {
 
-
+ 
 PokemonData: ICards[];
 
 
   constructor(private service: PokemonServiceService ){}
   
-  /*ngOnInit(): void {
-    this.service.getCards()
-                .subscribe(data => {
-                   this.PokemonData = data;
-                })
+  ngOnInit(): void {
+    this.service.getCards.subscribe(data => this.PokemonData = data);      
+                }
                
       
       
     }
-}*/
+
   
-  ngOnInit(): void {
+ /* ngOnInit(): void {
     this.service.getCards()
                 .subscribe(data => {
                   console.log(data);
                 })
                
-      
+      ss
       
     }
-}
+  }*/
 
 
 
