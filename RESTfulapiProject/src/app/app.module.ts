@@ -10,6 +10,7 @@ import { FormsModule} from "@angular/forms"
 import { HttpModule} from "@angular/http"
 import {HttpClientModule } from '@angular/common/http';
 import { PokemonServiceService } from './pokemon-service.service';
+import { Activity2Component } from './activity2/activity2.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PokemonServiceService } from './pokemon-service.service';
     NavBarComponent,
     HomeComponent,
     MainActivityComponent,
+    Activity2Component,
   
   ],
   imports: [
@@ -28,6 +30,7 @@ import { PokemonServiceService } from './pokemon-service.service';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},
       { path: 'main', component: MainActivityComponent},
+      { path: 'activity2', component: Activity2Component},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
     ], { useHash: true }),
   ],
