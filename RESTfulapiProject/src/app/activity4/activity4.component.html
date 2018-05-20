@@ -1,0 +1,34 @@
+<div class="container" style="height: 100%;">
+    <div class="row" >
+     
+        <div  class="col-md-2" >
+          <div>
+            <h3>Types</h3>
+            <h6>Fire</h6>
+            <h6>Water</h6>
+            <h6>Psychic</h6>
+            <h6>Grass</h6>
+            <h6>Dragon</h6>
+            <h6>Fighting</h6>
+            <h6>Fairy</h6>
+            <h6>etc..</h6>
+          </div>
+          
+        </div>
+
+      <div  class="col-md-2"> 
+          <h5><B>Search Cards</B></h5>
+          <input type="text" class="form-control" [(ngModel)]="Search">  
+      </div>
+      
+     
+      <div  class="col-md-3" *ngFor="let d of Pokemon.cards">
+          <div class="text-center" >
+              <img   style="width:300px" style="height: 300px" 
+              src= {{d.imageUrl}}
+              alt="foto pokemon">
+            </div>
+      </div>
+      
+    </div>
+  </div>
