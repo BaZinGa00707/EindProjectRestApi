@@ -11,6 +11,7 @@ import { HttpModule} from "@angular/http"
 import {HttpClientModule } from '@angular/common/http';
 import { PokemonServiceService } from './pokemon-service.service';
 import { Activity2Component } from './activity2/activity2.component';
+import { Activity3Component } from './activity3/activity3.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { Activity2Component } from './activity2/activity2.component';
     HomeComponent,
     MainActivityComponent,
     Activity2Component,
+    Activity3Component,
   
   ],
   imports: [
@@ -31,6 +33,7 @@ import { Activity2Component } from './activity2/activity2.component';
       { path: 'home', component: HomeComponent},
       { path: 'main', component: MainActivityComponent},
       { path: 'activity2', component: Activity2Component},
+      { path: 'activity3', component: Activity3Component},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
     ], { useHash: true }),
   ],

@@ -17,6 +17,7 @@ export class PokemonServiceService {
     return this.http.get<ICards[]>('https://api.pokemontcg.io/v1/cards?limit=100')
   }
 
+
   getPokemon(pokemon:String): Observable<ICards[]>{
     return this.http.get<ICards[]>(`https://api.pokemontcg.io/v1/cards?name=${pokemon}`)   // ! `
   }
