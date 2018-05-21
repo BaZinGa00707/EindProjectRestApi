@@ -13,8 +13,8 @@ export class PokemonServiceService {
 
   constructor(private http: HttpClient) { }
 
-  get getCards(): Observable<ICards[]>{
-    return this.http.get<ICards[]>('https://api.pokemontcg.io/v1/cards?limit=100')
+   getCards(number: number): Observable<ICards[]>{
+    return this.http.get<ICards[]>(`https://api.pokemontcg.io/v1/cards?limit=100&page=${number}`)
   }
 
 
@@ -24,6 +24,10 @@ export class PokemonServiceService {
 
   getTypes(type:String): Observable<ICards[]>{
     return this.http.get<ICards[]>(`https://api.pokemontcg.io/v1/cards?types=${type}`)   // ! `
+  }
+
+  getPokeDexNumber(number: number): Observable<ICards[]>{
+    return this.http.get<ICards[]>(`https://api.pokemontcg.io/v1/cards?nationalPokedexNumber=${number}`)   // ! `
   }
 }
 

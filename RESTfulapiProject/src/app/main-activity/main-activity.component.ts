@@ -11,19 +11,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainActivityComponent implements OnInit {
 
- 
+_number : number = 1;
 PokemonData: ICards[];
 
 
   constructor(private service: PokemonServiceService ){}
   
   ngOnInit(): void {
-    this.service.getCards.subscribe(data => this.PokemonData = data);      
-                }
-               
-      
-      
+    this.service.getCards(this._number).subscribe(data => this.PokemonData = data);      
     }
+               
+    get Search() {
+      return this._number;
+    } 
+  
+    set Search(value: number) {
+      this._number = value;
+      this.service.getCards(this._number).subscribe(data => this.PokemonData = data);
+    } 
+                
+    }
+
+    
 
   
  /* ngOnInit(): void {

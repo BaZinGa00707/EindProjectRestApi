@@ -13,6 +13,7 @@ import { PokemonServiceService } from './pokemon-service.service';
 import { Activity2Component } from './activity2/activity2.component';
 import { Activity3Component } from './activity3/activity3.component';
 import { Activity4Component } from './activity4/activity4.component';
+import { Activity5Component } from './activity5/activity5.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { Activity4Component } from './activity4/activity4.component';
     Activity2Component,
     Activity3Component,
     Activity4Component,
+    Activity5Component,
   
   ],
   imports: [
@@ -37,6 +39,7 @@ import { Activity4Component } from './activity4/activity4.component';
       { path: 'activity2', component: Activity2Component},
       { path: 'activity3', component: Activity3Component},
       { path: 'activity4', component: Activity4Component},
+      { path: 'activity5', component: Activity5Component},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
     ], { useHash: true }),
   ],
