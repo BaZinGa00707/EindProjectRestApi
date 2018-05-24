@@ -6,21 +6,38 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Controllers
 {
-    [Route("api/test")]
+    [Route("api/trainers")]
     public class TestController
     {
-        // GET api/values
+        // GET api/trainers
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "test Controllerr", "" };
         }
-
-        // GET api/values/5
-        [HttpGet("{check}")]
-        public string Get(int id)
+        
+        // GET api/trainers/All
+        [HttpGet("{all}")]
+        public List<Trainer> GetTrainerList()
         {
-            return "check";
+            var trainerList = new List<Trainer>();
+
+            trainerList.Add(new Trainer()
+            {
+                Id = 1,
+                Name = "Trainer1",
+                League = "Master",
+            });
+
+            trainerList.Add(new Trainer()
+            {
+                Id = 2,
+                Name = "Trainer2",
+                League = "Beginner",
+            });
+
+
+            return trainerList;
         }
 
     }
