@@ -1,0 +1,11 @@
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\bin\Debug\netcoreapp2.0\ApiProject.deps.json
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\bin\Debug\netcoreapp2.0\ApiProject.runtimeconfig.json
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\bin\Debug\netcoreapp2.0\ApiProject.runtimeconfig.dev.json
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\bin\Debug\netcoreapp2.0\ApiProject.dll
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\bin\Debug\netcoreapp2.0\ApiProject.pdb
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.csprojResolveAssemblyReference.cache
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.csproj.CoreCompileInputs.cache
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.AssemblyInfoInputs.cache
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.AssemblyInfo.cs
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.dll
+D:\AppOfTheYear\appofftheyear\ProjectRestApi\ApiProject\ApiProject\obj\Debug\netcoreapp2.0\ApiProject.pdb
