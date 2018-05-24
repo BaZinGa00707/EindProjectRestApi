@@ -11,5 +11,35 @@ namespace ApiProject
         public string Name { get; set; }
         public string League { get; set; }
      
+       
+
     }
+
+    public class ListPlace {
+
+        public List<Trainer> trainerList = new List<Trainer>();
+        public ListPlace()
+        {
+            trainerList.Add(new Trainer()
+            {
+                Id = 1,
+                Name = "Trainer1",
+                League = "Master",
+            });
+
+            trainerList.Add(new Trainer()
+            {
+                Id = 2,
+                Name = "Trainer2",
+                League = "Beginner",
+            });
+        }
+
+        public List<Trainer> GetTrainerList()
+        {
+            return trainerList;
+        }
+
+    }
+
 }
