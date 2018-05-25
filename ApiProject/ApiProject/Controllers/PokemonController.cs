@@ -20,15 +20,15 @@ namespace ApiProject.Controllers
             this.context = context;
         }
 
-        // GET api/values
-        [HttpGet]
+        // GET api/pokemons
+       /* [HttpGet]
         public IEnumerable<Pokemon> Get()
         {
             //return new string[] { "test01", "test02" };
             var pokemons = context.Pokemons.ToList();
             return pokemons;
         }
-
+        */
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult GetPokemon(int id)
@@ -45,6 +45,59 @@ namespace ApiProject.Controllers
             // return _listplace.GetTrainerList().ElementAt(id-1);
 
         }
+
+        [HttpGet]
+        public List<Pokemon> GetName( int? page , int length = 100)
+        {
+            IQueryable<Pokemon> query = context.Pokemons;
+
+           /* if (!string.IsNullOrWhiteSpace(Naam))
+            {
+                query = query.Where(d => d.Name == Naam);
+            }
+            */
+
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
+            query = query.Take(length);
+
+
+           
+            return query.ToList();
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
+        /*[HttpGet("{naam}")]
+        public IActionResult GetPo(string name)
+        {
+
+
+            var pokemon = context.Pokemons.SingleOrDefault(t => t.Name == name);
+            if (pokemon == null)
+            {
+                return NotFound();
+            }
+            return new OkObjectResult(pokemon);
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }*/
+        /* [Route("find")]
+         [HttpGet]
+         public List<Pokemon> GetName(string Naam)
+         {
+             IQueryable<Pokemon> query = context.Pokemons;
+
+             if (!string.IsNullOrWhiteSpace(Naam)) { 
+             query = query.Where(d => d.Name == Naam);
+             }
+             return query.ToList();
+
+             // return _listplace.GetTrainerList().ElementAt(id-1);
+
+         }*/
 
         [HttpPost]
         public IActionResult CreatePokemon([FromBody] Pokemon newPokemon)

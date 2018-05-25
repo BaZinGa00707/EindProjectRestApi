@@ -22,7 +22,7 @@ namespace ApiProject.Controllers
     // public ListPlace _listplace = new ListPlace();
      // public List<Trainer> trainerList = new List<Trainer>();
         // GET api/trainers
-        [HttpGet]
+       /* [HttpGet]
         public IEnumerable<Trainer> Get()
         {
 
@@ -30,7 +30,7 @@ namespace ApiProject.Controllers
             return trainers;
       //  return _listplace.GetTrainerList();
         
-    }
+    }*/
         
         // GET api/trainers/All
         [HttpGet("{id}")]
@@ -48,6 +48,45 @@ namespace ApiProject.Controllers
             // return _listplace.GetTrainerList().ElementAt(id-1);
 
         }
+
+        [HttpGet]
+        public List<Trainer> GetName(string Naam,string sort , string dir = "asc")
+        {
+            IQueryable<Trainer> query = context.Trainers;
+
+             if (!string.IsNullOrWhiteSpace(Naam))
+             {
+                 query = query.Where(d => d.Name == Naam);
+             }
+             
+
+
+            if (string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "league":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.League);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.League);
+                        break;
+                    case "Cards":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Cards);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Cards);
+                        break;
+
+                }
+
+            }
+            return query.ToList();
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
 
         [HttpPost]
         public IActionResult CreateTrainer([FromBody] Trainer newTrainer)
