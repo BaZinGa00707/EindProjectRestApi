@@ -63,7 +63,55 @@ namespace ApiProject.Controllers
             //return OkObjectResult("GetTrainer", new { id = newTrainer.Id });
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeletePokemon(int id)
+        {
 
-      
+
+            var pokemon = context.Pokemons.SingleOrDefault(t => t.Id == id);
+            if (pokemon == null)
+            {
+                return NotFound();
+            }
+
+            context.Pokemons.Remove(pokemon);
+            context.SaveChanges();
+
+            return NoContent();
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
+        [HttpPut]
+        public IActionResult UpdatePokemon([FromBody] Pokemon PokeUpdate)
+        {
+
+
+            var pokemon = context.Pokemons.Find(PokeUpdate.Id);
+            if (pokemon == null)
+            {
+                return NotFound();
+            }
+
+            pokemon.Hp = PokeUpdate.Hp;
+            pokemon.Image = PokeUpdate.Image;
+            pokemon.Name = PokeUpdate.Name;
+            pokemon.Rarity = PokeUpdate.Rarity;
+            pokemon.Type = PokeUpdate.Type;
+
+    
+            context.SaveChanges();
+
+            return Ok(pokemon);
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
+
+
+
+
     }
 }

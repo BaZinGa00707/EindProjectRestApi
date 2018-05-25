@@ -64,6 +64,50 @@ namespace ApiProject.Controllers
             //return OkObjectResult("GetTrainer", new { id = newTrainer.Id });
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTrainer(int id)
+        {
+
+
+            var trainer = context.Trainers.SingleOrDefault(t => t.Id == id);
+            if (trainer == null)
+            {
+                return NotFound();
+            }
+
+            context.Trainers.Remove(trainer);
+            context.SaveChanges();
+
+            return NoContent();
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
+        [HttpPut]
+        public IActionResult UpdateTrainer([FromBody] Trainer TrainerUpdate)
+        {
+
+
+            var trainer = context.Trainers.Find(TrainerUpdate.Id);
+            if (trainer == null)
+            {
+                return NotFound();
+            }
+
+            trainer.Name = TrainerUpdate.Name;
+            trainer.Cards = TrainerUpdate.Cards;
+            trainer.League = TrainerUpdate.League;
+          
+
+            context.SaveChanges();
+
+            return Ok(trainer);
+
+            // return _listplace.GetTrainerList().ElementAt(id-1);
+
+        }
+
 
 
         /*[HttpPost("{post}")]
@@ -84,10 +128,10 @@ namespace ApiProject.Controllers
               })*/
 
 
-           // _listplace.AddTrainer(id,name, league);
-            //return "Created trainer";
+        // _listplace.AddTrainer(id,name, league);
+        //return "Created trainer";
 
-            
+
 
         //}
         // GET api/trainers/
