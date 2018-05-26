@@ -7,16 +7,18 @@ import { PokemonServiceService,  Trainers } from '../pokemon-service.service';
   styleUrls: ['./activity6.component.css']
 })
 export class Activity6Component implements OnInit {
-
+  
+  _check: string = " ";
   _number : number = 10;
-TrainerData: Trainers[];
+  TrainerData: Trainers[];
+  name: string;
+  league: string;
+  cards: number;
 
 
   constructor(private service: PokemonServiceService ){}
   
-  name: string;
-  league: string;
-  cards: number;
+ 
 
   ngOnInit(): void {
     this.service.getTrainers(this._number).subscribe(data => this.TrainerData = data);      
@@ -34,6 +36,10 @@ TrainerData: Trainers[];
 
     MakeTrainer(event){ 
       this.service.postTrainer(this.name,this.league,this.cards);
+      if(this.service.postCheck){
+        this._check = "Trainer created!";
+      }
+      else { this._check = " ";}
     }
     
                 

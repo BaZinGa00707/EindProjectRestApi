@@ -11,6 +11,8 @@ import 'rxjs/add/operator/map' ;
 @Injectable()
 export class PokemonServiceService {
 
+  check: boolean = false;
+
   constructor(private http: HttpClient) { }
 
    getCards(number: number): Observable<ICards[]>{
@@ -50,12 +52,16 @@ export class PokemonServiceService {
     })
     .subscribe(
       (data:any) => {
-        console.log(data)
+        /*console.log(data)*/
+        if (data != null){ this.check = true;}
+        else {this.check= false;}
       }
     )
   }
 
-
+  postCheck(){
+    return this.check;
+  }
 
 
 }
