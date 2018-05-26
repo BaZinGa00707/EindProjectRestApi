@@ -12,11 +12,16 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>League</th>
+                            <th>Cards</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let d of TrainerData" >      <!-- | async -->
                             <td >{{d.name}}</td>   
+                            <td >{{d.league}}</td>   
+                            <td >{{d.cards}}</td>  
+
                         </tr>
                     </tbody>
                 </table>
@@ -34,12 +39,13 @@
     </div>
     <div class="md-form"> 
         <h6>league</h6>
-        <input mdbInputDirective type="text" name="league" [(ngModel)]="leauge" id="form2" class="form-control">
+        <input mdbInputDirective type="text" name="league" [(ngModel)]="league" id="form2" class="form-control">
     </div>
     <div class="md-form"> 
         <h6>Cards</h6>
         <input mdbInputDirective type="text" name="cards" [(ngModel)]="cards" id="form3" class="form-control">
     </div>
+    <button type="button" (click)="MakeTrainer($event)" class="btn btn-outline-success" mdbWavesEffect>Post</button>
     </div>
     
   </div>

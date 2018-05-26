@@ -33,11 +33,26 @@ export class PokemonServiceService {
   // eigen Api 
 
   getTrainers(number: number):Observable<Trainers[]>{
-    return this.http.get<Trainers[]>(`http://localhost:2412/api/pokemons?page0&length=${number}`)
+    return this.http.get<Trainers[]>(`http://localhost:2412/api/trainers?page0&length=${number}`)
   }
 
   getPokemonsId(number: number):Observable<Pokemon[]>{
     return this.http.get<Pokemon[]>(`http://localhost:2412/api/pokemons/${number}`)
+  }
+
+  postTrainer(n: string , l: string , c: number){
+    this.http.post<Trainers>("http://localhost:2412/api/trainers" , 
+    {
+       name: n,
+       league: l,
+       cards: c
+    
+    })
+    .subscribe(
+      (data:any) => {
+        console.log(data)
+      }
+    )
   }
 
 

@@ -38,7 +38,15 @@ namespace ApiProject
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(options => options.WithOrigins("http://localhost:4200"));
+            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials()
+            //  .WithMethods("GET", "POST")
+            //  .WithHeaders("Access-Control-Allow-Methods", "POST")
+
+
+            );
 
             app.UseMvc();
 

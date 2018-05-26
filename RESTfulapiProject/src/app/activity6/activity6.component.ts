@@ -16,7 +16,7 @@ TrainerData: Trainers[];
   
   name: string;
   league: string;
-  cards: string;
+  cards: number;
 
   ngOnInit(): void {
     this.service.getTrainers(this._number).subscribe(data => this.TrainerData = data);      
@@ -31,6 +31,10 @@ TrainerData: Trainers[];
       this.service.getTrainers(this._number).subscribe(data => this.TrainerData = data);
     } 
 
+
+    MakeTrainer(event){ 
+      this.service.postTrainer(this.name,this.league,this.cards);
+    }
     
                 
     
