@@ -38,6 +38,8 @@ namespace ApiProject
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(options => options.WithOrigins("http://localhost:4200"));
+
             app.UseMvc();
 
             DbInitializer.Initialize(pokeContext);

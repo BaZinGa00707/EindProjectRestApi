@@ -29,6 +29,20 @@ export class PokemonServiceService {
   getPokeDexNumber(number: number): Observable<ICards[]>{
     return this.http.get<ICards[]>(`https://api.pokemontcg.io/v1/cards?nationalPokedexNumber=${number}`)   // ! `
   }
+
+  // eigen Api 
+
+  getTrainers(number: number):Observable<Trainers[]>{
+    return this.http.get<Trainers[]>(`http://localhost:2412/api/pokemons?page0&length=${number}`)
+  }
+
+  getPokemonsId(number: number):Observable<Pokemon[]>{
+    return this.http.get<Pokemon[]>(`http://localhost:2412/api/pokemons/${number}`)
+  }
+
+
+
+
 }
 
 
@@ -84,4 +98,22 @@ export interface Card {
 
 export interface ICards {
   cards: Card[];
+}
+
+
+
+export interface Trainers{
+  id: string;
+  name: string;
+  league: string;
+  cards: number;
+}
+
+export interface Pokemon{
+  id: string;
+  name: string;
+  rarity: string;
+  type: number;
+  hp : number;
+  image: string;
 }

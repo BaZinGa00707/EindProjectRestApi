@@ -49,38 +49,69 @@ namespace ApiProject.Controllers
 
         }
 
+        /* [HttpGet]
+         public List<Trainer> GetName(string Naam,string L, int C,string sort , string dir = "asc")
+         {
+             IQueryable<Trainer> query = context.Trainers;
+
+              if (!string.IsNullOrWhiteSpace(Naam))
+              {
+                  query = query.Where(d => d.Name == Naam);
+              }
+             if (!string.IsNullOrWhiteSpace(Naam))
+             {
+                 query = query.Where(d => d.League == L);
+             }
+             if (!string.IsNullOrWhiteSpace(Naam))
+             {
+                 query = query.Where(d => d.Cards == C);
+             }
+
+
+
+             if (string.IsNullOrWhiteSpace(sort))
+             {
+                 switch (sort)
+                 {
+                     case "league":
+                         if (dir == "asc")
+                             query = query.OrderBy(d => d.League);
+                         else if (dir == "desc")
+                             query = query.OrderByDescending(d => d.League);
+                         break;
+                     case "Cards":
+                         if (dir == "asc")
+                             query = query.OrderBy(d => d.Cards);
+                         else if (dir == "desc")
+                             query = query.OrderByDescending(d => d.Cards);
+                         break;
+
+                 }
+
+             }
+             return query.ToList();
+
+             // return _listplace.GetTrainerList().ElementAt(id-1);
+
+         }*/
+
         [HttpGet]
-        public List<Trainer> GetName(string Naam,string sort , string dir = "asc")
+        public List<Trainer> Getlength(int? page, int length = 100)
         {
             IQueryable<Trainer> query = context.Trainers;
 
-             if (!string.IsNullOrWhiteSpace(Naam))
+            /* if (!string.IsNullOrWhiteSpace(Naam))
              {
                  query = query.Where(d => d.Name == Naam);
              }
-             
+             */
+
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
+            query = query.Take(length);
 
 
-            if (string.IsNullOrWhiteSpace(sort))
-            {
-                switch (sort)
-                {
-                    case "league":
-                        if (dir == "asc")
-                            query = query.OrderBy(d => d.League);
-                        else if (dir == "desc")
-                            query = query.OrderByDescending(d => d.League);
-                        break;
-                    case "Cards":
-                        if (dir == "asc")
-                            query = query.OrderBy(d => d.Cards);
-                        else if (dir == "desc")
-                            query = query.OrderByDescending(d => d.Cards);
-                        break;
 
-                }
-
-            }
             return query.ToList();
 
             // return _listplace.GetTrainerList().ElementAt(id-1);

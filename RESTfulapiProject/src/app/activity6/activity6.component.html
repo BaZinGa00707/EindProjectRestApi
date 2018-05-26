@@ -1,0 +1,46 @@
+<div style="background-image: url(./assets/pokemonbackground.jpg); height:2000px; width: 100%">
+<div class="container" >
+  <div class="row">
+   
+   
+    
+    <div class="col-md-5">
+        <div class="card" *ngIf="TrainerData">
+          <div class="card-header">Top {{_number}} Trainers <input type="text" class="form-control" [(ngModel)]="Search"> </div>
+            <div class="card-block">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of TrainerData" >      <!-- | async -->
+                            <td >{{d.name}}</td>   
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+    <div class="col-md-5" >
+        <h4>Make your own trainer</h4>
+      <div class="md-form"> 
+        <h6>Name</h6>
+        <input mdbInputDirective type="text" name="name" [(ngModel)]="name" id="form1" class="form-control">
+    </div>
+    <div class="md-form"> 
+        <h6>league</h6>
+        <input mdbInputDirective type="text" name="league" [(ngModel)]="leauge" id="form2" class="form-control">
+    </div>
+    <div class="md-form"> 
+        <h6>Cards</h6>
+        <input mdbInputDirective type="text" name="cards" [(ngModel)]="cards" id="form3" class="form-control">
+    </div>
+    </div>
+    
+  </div>
+</div>
