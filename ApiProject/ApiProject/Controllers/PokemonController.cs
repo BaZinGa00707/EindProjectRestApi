@@ -115,6 +115,13 @@ namespace ApiProject.Controllers
 
          }
 
+       /* public Pokemon Get(string name)
+        {
+            var pokemon = context.Pokemons.SingleOrDefault(t => t.Name == name);
+            
+            return(pokemon);
+        }*/
+
         /*[HttpGet("{naam}")]
         public IActionResult GetPo(string name)
         {
