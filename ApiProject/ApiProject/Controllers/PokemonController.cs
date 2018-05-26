@@ -46,7 +46,7 @@ namespace ApiProject.Controllers
 
         }
 
-        [HttpGet]
+       /* [HttpGet]
         public List<Pokemon> GetName( int? page , int length = 100)
         {
             IQueryable<Pokemon> query = context.Pokemons;
@@ -57,7 +57,7 @@ namespace ApiProject.Controllers
             }
             */
 
-            if (page.HasValue)
+          /*  if (page.HasValue)
                 query = query.Skip(page.Value * length);
             query = query.Take(length);
 
@@ -67,7 +67,53 @@ namespace ApiProject.Controllers
 
             // return _listplace.GetTrainerList().ElementAt(id-1);
 
-        }
+        }*/
+
+         [HttpGet]
+         public List<Pokemon> GetName(string Naam,int hp, string T,string sort , string dir = "asc")
+         {
+             IQueryable<Pokemon> query = context.Pokemons;
+
+              if (!string.IsNullOrWhiteSpace(Naam))
+              {
+                  query = query.Where(d => d.Name == Naam);
+              }
+             if (!string.IsNullOrWhiteSpace(Naam))
+             {
+                 query = query.Where(d => d.Hp == hp);
+             }
+             if (!string.IsNullOrWhiteSpace(Naam))
+             {
+                 query = query.Where(d => d.Type == T);
+             }
+
+
+
+             if (string.IsNullOrWhiteSpace(sort))
+             {
+                 switch (sort)
+                 {
+                     case "Type":
+                         if (dir == "asc")
+                             query = query.OrderBy(d => d.Type);
+                         else if (dir == "desc")
+                             query = query.OrderByDescending(d => d.Type);
+                         break;
+                     case "Rarity":
+                         if (dir == "asc")
+                             query = query.OrderBy(d => d.Rarity);
+                         else if (dir == "desc")
+                             query = query.OrderByDescending(d => d.Rarity);
+                         break;
+
+                 }
+
+             }
+             return query.ToList();
+
+             // return _listplace.GetTrainerList().ElementAt(id-1);
+
+         }
 
         /*[HttpGet("{naam}")]
         public IActionResult GetPo(string name)

@@ -38,8 +38,8 @@ export class PokemonServiceService {
     return this.http.get<Trainers[]>(`http://localhost:2412/api/trainers?page0&length=${number}`)
   }
 
-  getPokemonsId(number: number):Observable<Pokemon[]>{
-    return this.http.get<Pokemon[]>(`http://localhost:2412/api/pokemons/${number}`)
+  getPokemonsId(number: number):Observable<Pokemon>{
+    return this.http.get<Pokemon>(`http://localhost:2412/api/pokemons/${number}`)
   }
 
   postTrainer(n: string , l: string , c: number){

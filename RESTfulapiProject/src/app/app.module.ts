@@ -15,6 +15,7 @@ import { Activity3Component } from './activity3/activity3.component';
 import { Activity4Component } from './activity4/activity4.component';
 import { Activity5Component } from './activity5/activity5.component';
 import { Activity6Component } from './activity6/activity6.component';
+import { Activity7Component } from './activity7/activity7.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { Activity6Component } from './activity6/activity6.component';
     Activity4Component,
     Activity5Component,
     Activity6Component,
+    Activity7Component,
   
   ],
   imports: [
@@ -43,6 +45,7 @@ import { Activity6Component } from './activity6/activity6.component';
       { path: 'activity4', component: Activity4Component},
       { path: 'activity5', component: Activity5Component},
       { path: 'activity6', component: Activity6Component},
+      { path: 'activity7', component: Activity7Component},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
     ], { useHash: true }),
   ],
