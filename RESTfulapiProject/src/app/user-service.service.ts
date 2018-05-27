@@ -5,7 +5,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 @Injectable()
 export class UserServiceService {
 
-  private isUserLoggedIn;
+  private isUserLoggedIn = false;
   private username;
 
   constructor(){
