@@ -1,0 +1,24 @@
+<div style="background-image: url(./assets/pokemonbackground.jpg); height:2000px; width: 100%">
+  <div class="container" >
+    <div class="row">
+     
+     
+      
+     
+          
+      </div>
+      <div class="col-md-5" >
+        <div class="md-form"> 
+          <h6>E-mail</h6>
+          <input mdbInputDirective type="text" name="email" [(ngModel)]="email" id="form1" class="form-control">
+      </div>
+      <div class="md-form"> 
+          <h6>Password</h6>
+          <input mdbInputDirective type="text" name="pass" [(ngModel)]="pass" id="form2" class="form-control">
+      </div>
+      <button type="button" (click)="Login($event)" class="btn btn-default waves-light" mdbWavesEffect>LogIn</button><button type="button" (click)="SignUp($event)" class="btn btn-secondary waves-light" mdbWavesEffect>SignUp</button>
+      
+      </div>
+      
+    </div>
+  </div>
