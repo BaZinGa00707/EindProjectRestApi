@@ -17,6 +17,17 @@ import { Activity5Component } from './activity5/activity5.component';
 import { Activity6Component } from './activity6/activity6.component';
 import { Activity7Component } from './activity7/activity7.component';
 import { ActivityUsersComponent } from './activity-users/activity-users.component';
+import { UserServiceService } from './user-service.service';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,6 +48,8 @@ import { ActivityUsersComponent } from './activity-users/activity-users.componen
     BrowserModule,
     FormsModule,
     HttpModule,
+    //AngularFireModule.initializeApp(firebaseConfig),
+    //AngularFireAuthModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
@@ -55,7 +68,18 @@ import { ActivityUsersComponent } from './activity-users/activity-users.componen
   schemas:[NO_ERRORS_SCHEMA],
   providers: [
     PokemonServiceService,
+    UserServiceService,
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/*export const firebaseConfig = {
+  apiKey: "AIzaSyAHGw-mdZDisYysutFkV6YJexK4t86ML10",
+  authDomain: "pokemonporject.firebaseapp.com",
+  databaseURL: "https://pokemonporject.firebaseio.com",
+  projectId: "pokemonporject",
+  storageBucket: "",
+  messagingSenderId: "1031150700926"
+};
+*/

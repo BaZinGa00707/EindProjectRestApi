@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map' ;
 export class PokemonServiceService {
 
   check: boolean = false;
+  checkUser: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +40,8 @@ export class PokemonServiceService {
   }
 
   getPokemonsId(number: number):Observable<Pokemon>{
-    return this.http.get<Pokemon>(`http://localhost:2412/api/pokemons/${number}`)
+    if(this.checkUser){
+    return this.http.get<Pokemon>(`http://localhost:2412/api/pokemons/${number}`)}
   }
 
   postTrainer(n: string , l: string , c: number){
@@ -63,6 +65,13 @@ export class PokemonServiceService {
     return this.check;
   }
 
+  CheckLoginTrue(){
+    this.checkUser = true;
+  }
+
+  CheckLoginFalse(){
+   this.checkUser = false;
+  }
 
 }
 
