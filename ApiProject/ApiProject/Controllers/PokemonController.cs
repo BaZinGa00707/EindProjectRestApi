@@ -70,7 +70,7 @@ namespace ApiProject.Controllers
         }*/
 
          [HttpGet]
-         public List<Pokemon> GetName(string Naam,int hp, string T,string sort , string dir = "asc")
+         public List<Pokemon> GetName(string Naam, string T,string sort , string dir = "asc")
          {
              IQueryable<Pokemon> query = context.Pokemons;
 
@@ -78,10 +78,6 @@ namespace ApiProject.Controllers
               {
                   query = query.Where(d => d.Name == Naam);
               }
-             if (!string.IsNullOrWhiteSpace(Naam))
-             {
-                 query = query.Where(d => d.Hp == hp);
-             }
              if (!string.IsNullOrWhiteSpace(Naam))
              {
                  query = query.Where(d => d.Type == T);
